@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitiz Lamsal's Portfolio</title>
+    <link rel="icon" href="profile.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: #2a3a2f;
+            color: #fff;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            font-size: 1.5rem;
+            justify-content: space-between;
+        }
+
+        #star{
+            height: 20px;
+            margin-right: 6px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd166;
+        }
+
+        .button {
+            background-color: #ffd166;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: #2a3a2f;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ffbb00;
+            transform: translateY(-2px);
+        }
+
+        #hero {
+            text-align: center;
+            padding: 150px 20px 80px;
+            background-color: #3f4d3f;
+            color: white;
+            position: relative;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffd166;
+            font-family: 'Courier New', monospace;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 80px 10%;
+            background-color: white;
+        }
+
+        .section-dark {
+            background-color: #2a3a2f;
+            color: white;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #2a3a2f;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-dark h2 {
+            color: #ffd166;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #ffd166;
+            margin-top: 10px;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #ffd166;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #ffd166;
+            border: 3px solid #2a3a2f;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #2a3a2f;
+        }
+
+        .section-dark .timeline::before {
+            background-color: #ffd166;
+        }
+
+        .year {
+            font-weight: bold;
+            color: #ffd166;
+        }
+
+        .section-dark .year {
+            color: white;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .skill-category {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .section-dark .skill-category {
+            background-color: #3f4d3f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #1e261e;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+                position: relative;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+            }
+        }
+
+        /* Personality traits */
+        .traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .trait {
+            background-color: #ffd166;
+            color: #2a3a2f;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .section-dark .trait {
+            background-color: #ffd166;
+            color: #2a3a2f;
+        }
+
+        /* Interests styling */
+        .interests {
+            font-style: italic;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="star.png" alt="star" id="star">Kshitiz Lamsal</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About ME</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact" class="button">Contact Me!</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">      
+        <h1 class="hero-title">PORTFOLIO</h1>
+        <h2 class="hero-subtitle">Kshitiz Lamsal</h2>
+        <p>Beginner Web Designer | Animator</p>
+        <div class="social-links">
+            <p>IG: @kshitizlamsal | FB: kshitiz_lamsal</p>
+        </div>
+    </section>
+    
+    <section id="about" class="section-dark">
+        <img src="placeholder.jpg" alt="Mero pic" class="profile-img">
+        <h2>Hello, I am Kshitiz!</h2>
+        <p>I am a self-taught Beginner Web Developer in Nepal with Animating and 3D Modling Skills. I am currently living in Lalitpuur and pursuing a class 11 in NIST Science Course.</p>
+        <p>GitHub: <a href="https://github.com/zeciskl/messi-website" style="color: #ffd166;">github.com/zeciskl/messi-website</a></p>
+        <div class="traits">
+            <span class="trait">HTML</span>
+            <span class="trait">PHP</span>
+            <span class="trait">CSS & JAVASCRIPT</span>
+        </div>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">2081-2081</span>
+                <p><strong>NIST</strong><br>
+                Class 11</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2081-2081</span>
+                <p><strong>Sky Bridg Foundation</strong><br>
+                After See bridge Course</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2067-2080</span>
+                <p><strong>GORKHA UNITED PUBLIC SCHOOL</strong><br>
+                class Nursery to Class 10</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience" class="section-dark">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">2081</span>
+                <p><strong>PHP</strong><br>
+                Created Advance Php projects</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2080</span>
+                <p><strong>CSS</strong><br>
+                Styled multiple Websites.</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2078</span>
+                <p><strong>HTMl</strong><br>
+                Designed multiple Advance website Structure</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="activities">
+        <h2>Activities</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="year">2080</span>
+                <p><strong>NEB</strong><br>
+                SCIENCE EXHIBITION</p>
+            </div>
+            <div class="timeline-item">
+                <span class="year">2079</span>
+                <p><strong>School Parants Day</strong><br>
+                ECONOMIC WEBSITE DESIGNING AND DISPLAYING</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills" class="section-dark">
+        <h2>Skills & Languages</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li>English - Advance</li>
+                    <li>Hindi - Advance</li>
+                    <li>Nepali - Native</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Design Skills</h3>
+                <ul>
+                    <li>Logo Design</li>
+                    <li>Photoshop</li>
+                    <li>PowerPoint Design</li>
+                    <li>Animation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="interests">
+        <h2>Hobbies & Interests</h2>
+        <p class="interests">3D Modling | Animation | Triditional Art | Playing Games | Learning</p>
+    </section>
+    
+    <section id="contact" class="section-dark">
+        <h2>Contact</h2>
+        <p>Email: lamsalkshitiz2@gmail.com</p>
+        <p>Location: Lalitpur, Kathmandu</p>
+        <div style="margin-top: 30px;">
+            <a href="mailto:lamsalkshitiz2@gmail.com" class="button">Send me a message</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2081 Kshitiz Lamsal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
